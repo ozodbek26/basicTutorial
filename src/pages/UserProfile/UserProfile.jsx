@@ -1,8 +1,7 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./UserProfile.module.scss";
-import profilePicture from "../../assets/images/profilePicture.png"
+import profilePicture from "../../assets/images/profilePicture.png";
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);
@@ -28,12 +27,20 @@ export default function UserProfile() {
     <div className={styles.profile_container}>
       <div className={styles.header}>
         <h1>Профиль пользователя</h1>
-        <button
-          className={styles.edit_button}
-          onClick={() => navigate("/mainPage")}
-        >
-          Back
-        </button>
+        <div className={styles.blkck23} >
+          <button
+            className={styles.edit_button}
+            onClick={() => navigate("/mainPage")}
+          >
+            Back
+          </button>
+          <button
+            className={styles.edit_button2}
+            onClick={() => navigate("/")}
+          >
+            exit
+          </button>
+        </div>
       </div>
 
       <div className={styles.profile_card}>

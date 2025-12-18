@@ -134,15 +134,13 @@ export default function CreateAccount() {
             Create Account
           </button>
 
-          {accountCreated && (
-            <button
-              type="button"
-              onClick={() => navigate("/")}
-              className={styles.create_account_button}
-            >
-              Back to login
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => navigate("/")}
+            className={styles.create_account_button}
+          >
+            Back to login
+          </button>
         </form>
       </div>
     </div>
