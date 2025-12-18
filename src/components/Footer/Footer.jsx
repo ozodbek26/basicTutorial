@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={styles.container}>
         {/* Левый блок — название курса + описание */}
         <div className={styles.column}>
-          <h3 className={styles.logo}>Курс за ? недели</h3>
+          <h3 className={styles.logo}>Курс за 6 недели</h3>
           <p>Быстро и просто научитесь ВСЕМУ , что нужно в 2025 году</p>
           <p> 2025 Все права защищены. но это не точно{")"}</p>
         </div>

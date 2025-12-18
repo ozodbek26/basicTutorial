@@ -9,10 +9,10 @@ export default function Header() {
     <div className={styles.header_container}>
       <div className={styles.header_left} >
         <img className={styles.logo} src={logo} alt="Logo" />
-        <Link className={styles.header_link} to="/"> Home</Link>
-        <Link className={styles.header_link} to="/"> Home</Link>
-        <Link className={styles.header_link} to="/"> Home</Link>
-        <Link className={styles.header_link} to="/"> Home</Link>
+        <Link className={styles.header_link} to="/userComments"> Comments</Link>
+        <Link className={styles.header_link} to="/mainPage"> Home</Link>
+        <Link className={styles.header_link} to="/mainPage"> Home</Link>
+        <Link className={styles.header_link} to="/mainPage"> Home</Link>
       </div>
       <div className={styles.header_right} > 
          <Link to="/"> 

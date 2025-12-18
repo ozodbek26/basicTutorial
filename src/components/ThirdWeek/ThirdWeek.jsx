@@ -21,12 +21,12 @@ export default function ThirdWeek() {
         <p>Переменные используются для хранения данных:</p>
         <pre>
           <code>{`// Создание переменных
-let name = "Озодбек"; // можно менять
+let name = "Иван"; // можно менять
 const age = 18; // постоянная
 var city = "Бишкек"; // устаревший вариант`}</code>
         </pre>
         <p>
-          Используй <strong>let</strong> для изменяемых значений,{" "}
+          Используй <strong>let</strong> для изменяемых значений,
           <strong>const</strong> для постоянных, а <strong>var</strong> лучше
           избегать.
         </p>
@@ -39,7 +39,7 @@ var city = "Бишкек"; // устаревший вариант`}</code>
           <li>Number — число: 10, 3.14</li>
           <li>Boolean — логический: true или false</li>
           <li>Array — массив: [1, 2, 3]</li>
-          <li>Object — объект: {`{name: "Ozodbek", age: 18}`}</li>
+          <li>Object — объект: {`{name: "Ivan", age: 18}`}</li>
           <li>null — пустое значение</li>
           <li>undefined — значение не определено</li>
         </ul>
@@ -79,7 +79,7 @@ true || false // true
 function greet(name) {
   console.log("Привет, " + name);
 }
-greet("Озодбек");
+greet("Иван");
 
 // Стрелочная функция
 const sum = (a, b) => a + b;
@@ -161,12 +161,12 @@ fruits.map(fruit => console.log(fruit)); // перебор`}</code>
         <p>Объекты позволяют хранить связанные данные:</p>
         <pre>
           <code>{`let person = {
-  name: "Ozodbek",
+  name: "Ivan",
   age: 18,
   city: "Bishkek"
 };
 
-console.log(person.name); // Ozodbek
+console.log(person.name); // Ivan
 person.age = 19; // изменить`}</code>
         </pre>
       </section>

@@ -5,7 +5,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import CreateAccount from "./pages/CreateAccount/CreateAccount";
 
 import { useNavigate } from "react-router-dom";
-
+import UserComments from "./pages/UserComments/UserComments";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={<HomeLogin />} />
       <Route path="/mainPage" element={<MainPage />} />
       <Route path="/createAccount" element={<CreateAccount />} />
-      {/* <Route path="/createAccount" element={<CreateAccount />} /> */}
+      <Route path="/userComments" element={<UserComments />} />
     </Routes>
   );
 }
