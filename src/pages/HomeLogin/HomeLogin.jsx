@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 import styles from "./HomeLogin.module.scss";
 
 export default function HomeLogin() {
+  const [users, setUsers] = useState([]);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((e) => e.json())
+      .then((data) => {
+        setUsers(data);
+      });
+  }, []);
+
+  function handleLogin(e) {
+    e.preventDefault();
+
+    const userExists = users.some(
+      (user) => user.name === username && user.password === password
+    );
+
+    if (userExists) {
+      navigate("/mainPage");
+    } else {
+      alert("Неверное имя или пароль");
+    }
+  }
+
   return (
     <div className={styles.home_login_container}>
       <div className={styles.login_box}>
@@ -11,13 +40,21 @@ export default function HomeLogin() {
             className={styles.login_input}
             type="text"
             placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <input
             className={styles.login_input}
             type="password"
             placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <button className={styles.login_button} type="submit">
+          <button
+            onClick={handleLogin}
+            className={styles.login_button}
+            type="submit"
+          >
             Login
           </button>
         </form>

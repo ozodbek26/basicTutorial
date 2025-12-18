@@ -15,35 +15,46 @@ export default function CreateAccount() {
     e.preventDefault();
 
     if (!username) {
-      alert("Enter username");
+      alert("Введите имя пользователя");
       return;
     }
 
     if (Number(age) < 18) {
-      alert("You must be at least 18");
+      alert("Укажите возраст — вам должно быть не менее 18 лет");
       return;
     }
 
     if (password.length < 8) {
-      alert("Password must be at least 8 characters");
+      alert("Пароль должен содержать минимум 8 символов");
       return;
     }
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      alert("Пароли не совпадают. Проверьте и попробуйте снова");
       return;
     }
 
-    // useEffect(() => {
-    //   fetch("http://localhost:5000", { method: "POST" });
-    // }, []);
+    const newUser = { name: username, password: password, age: age };
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Ответ сервера:", data);
+        alert("Аккаунт успешно создан");
+        setAccountCreated(true);
 
-    alert("Account created successfully!");
-    setUsername("");
-    setPassword("");
-    setConfirmPassword("");
-    setAge("");
-    setAccountCreated(true);
+        setUsername("");
+        setPassword("");
+        setConfirmPassword("");
+        setAge("");
+      })
+      .catch((err) => {
+        console.log("Ошибка запроса:", err);
+        alert("Ошибка при создании аккаунта");
+      });
   }
 
   return (
@@ -92,7 +103,7 @@ export default function CreateAccount() {
             <button
               className={styles.create_account_button}
               type="button"
-              onClick={() => navigate("/mainPage")}
+              onClick={() => navigate("/")}
             >
               Back to login
             </button>
