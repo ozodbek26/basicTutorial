@@ -1,0 +1,18 @@
+import { Routes, Route } from "react-router-dom";
+
+import HomeLogin from "./pages/HomeLogin/HomeLogin";
+import MainPage from "./pages/MainPage/MainPage";
+import CreateAccount from "./pages/CreateAccount/CreateAccount";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomeLogin />} />
+      <Route path="/mainPage" element={<MainPage />} />
+      <Route path="/createAccount" element={<CreateAccount />} />
+      {/* <Route path="/createAccount" element={<CreateAccount />} /> */}
+    </Routes>
+  );
+}
+
+export default App;

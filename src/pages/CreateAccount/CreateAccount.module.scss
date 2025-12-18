@@ -1,0 +1,41 @@
+.create_account_container {
+    margin-top: 50px;
+
+    .create_account_box {
+
+        width: 400px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 20px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .create_account_form {
+            display: flex;
+            flex-direction: column;
+
+            .create_account_input {
+                margin-bottom: 15px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .create_account_button {
+                margin-top: 20px;
+                padding: 10px;
+                font-size: 16px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #45a049;
+                }
+            }
+        }
+    }
+}
