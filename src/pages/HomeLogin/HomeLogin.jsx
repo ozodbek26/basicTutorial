@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 import styles from "./HomeLogin.module.scss";
 
@@ -11,31 +10,34 @@ export default function HomeLogin() {
 
   useEffect(() => {
     fetch("http://localhost:5000/users")
-      .then((e) => e.json())
-      .then((data) => {
-        setUsers(data);
-      });
+      .then((res) => res.json())
+      .then((data) => setUsers(data))
+      .catch((err) => console.error(err));
   }, []);
 
   function handleLogin(e) {
     e.preventDefault();
 
-    const userExists = users.some(
+    const currentUser = users.find(
       (user) => user.name === username && user.password === password
     );
 
-    if (userExists) {
-      navigate("/mainPage");
-    } else {
+    if (!currentUser) {
       alert("Неверное имя или пароль");
+      return;
     }
+
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+    navigate("/mainPage");
   }
 
   return (
     <div className={styles.home_login_container}>
       <div className={styles.login_box}>
-        <h1 className={styles.login_title}>Welcome to the Home Login</h1>
-        <form className={styles.login_form}>
+        <h1 className={styles.login_title}>Login</h1>
+
+        <form className={styles.login_form} onSubmit={handleLogin}>
           <input
             className={styles.login_input}
             type="text"
@@ -43,6 +45,7 @@ export default function HomeLogin() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+
           <input
             className={styles.login_input}
             type="password"
@@ -50,14 +53,12 @@ export default function HomeLogin() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button
-            onClick={handleLogin}
-            className={styles.login_button}
-            type="submit"
-          >
+
+          <button className={styles.login_button} type="submit">
             Login
           </button>
         </form>
+
         <div className={styles.login_link}>
           <a href="/createAccount">I don't have an account</a>
         </div>

@@ -15,7 +15,7 @@ export default function Header() {
         <Link className={styles.header_link} to="/mainPage"> Home</Link>
       </div>
       <div className={styles.header_right} > 
-         <Link to="/"> 
+         <Link to="/UserProfile"> 
          <img  src={profilePicture} alt="Profile Picture" />
          </Link>
       </div>

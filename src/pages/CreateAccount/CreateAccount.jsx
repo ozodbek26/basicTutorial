@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./CreateAccount.module.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -8,54 +8,72 @@ export default function CreateAccount() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [age, setAge] = useState("");
   const [accountCreated, setAccountCreated] = useState(false);
+  const [file, setFile] = useState(null);
+  const [preview, setPreview] = useState("");
 
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!username) {
-      alert("Введите имя пользователя");
-      return;
-    }
+    if (!username) return alert("Введите имя пользователя");
+    if (Number(age) < 18) return alert("Вам должно быть не менее 18 лет");
+    if (password.length < 8) return alert("Пароль минимум 8 символов");
+    if (password !== confirmPassword) return alert("Пароли не совпадают");
+    if (!file) return alert("Выберите PNG-файл");
+    if (file.type !== "image/png") return alert("Только PNG!");
 
-    if (Number(age) < 18) {
-      alert("Укажите возраст — вам должно быть не менее 18 лет");
-      return;
-    }
+    try {
+      const base64Image = await fileToBase64(file);
 
-    if (password.length < 8) {
-      alert("Пароль должен содержать минимум 8 символов");
-      return;
-    }
+      const newUser = {
+        name: username,
+        password: password,
+        age: age,
+        img: base64Image,
+      };
 
-    if (password !== confirmPassword) {
-      alert("Пароли не совпадают. Проверьте и попробуйте снова");
-      return;
-    }
-
-    const newUser = { name: username, password: password, age: age };
-    fetch("http://localhost:5000/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newUser),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Ответ сервера:", data);
-        alert("Аккаунт успешно создан");
-        setAccountCreated(true);
-
-        setUsername("");
-        setPassword("");
-        setConfirmPassword("");
-        setAge("");
-      })
-      .catch((err) => {
-        console.log("Ошибка запроса:", err);
-        alert("Ошибка при создании аккаунта");
+      const res = await fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUser),
       });
+
+      const data = await res.json();
+      console.log("Аккаунт создан:", data);
+
+      alert("Аккаунт успешно создан!");
+      setAccountCreated(true);
+
+      setUsername("");
+      setPassword("");
+      setConfirmPassword("");
+      setAge("");
+      setFile(null);
+      setPreview("");
+    } catch (err) {
+      console.error(err);
+      alert("Ошибка при создании аккаунта");
+    }
   }
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+      const previewUrl = URL.createObjectURL(selectedFile);
+      setPreview(previewUrl);
+    }
+  };
 
   return (
     <div className={styles.create_account_container}>
@@ -64,46 +82,63 @@ export default function CreateAccount() {
 
         <form className={styles.create_account_form} onSubmit={handleSubmit}>
           <input
-            className={styles.create_account_input}
-            type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-          />
-
-          <input
             className={styles.create_account_input}
+          />
+          <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <input
             className={styles.create_account_input}
+          />
+          <input
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-
-          <input
             className={styles.create_account_input}
+          />
+          <input
             type="number"
             placeholder="How old are you"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            className={styles.create_account_input}
           />
 
-          <button className={styles.create_account_button} type="submit">
+          <input
+            type="file"
+            accept="image/png"
+            onChange={handleFileChange}
+            className={styles.create_account_input}
+          />
+
+          {preview && (
+            <img
+              src={preview}
+              alt="Превью аватара"
+              style={{
+                width: 150,
+                height: 150,
+                objectFit: "cover",
+                marginTop: 10,
+                borderRadius: 8,
+              }}
+            />
+          )}
+
+          <button type="submit" className={styles.create_account_button}>
             Create Account
           </button>
 
           {accountCreated && (
             <button
-              className={styles.create_account_button}
               type="button"
               onClick={() => navigate("/")}
+              className={styles.create_account_button}
             >
               Back to login
             </button>
