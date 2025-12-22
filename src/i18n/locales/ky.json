@@ -1,0 +1,68 @@
+{
+  "home": {
+    "Comments": "Пикирлер",
+    "link": "үй"
+  },
+
+  "login": {
+    "title": "Кирүү",
+    "usernamePlaceholder": "Колдонуучунун аты",
+    "passwordPlaceholder": "Сырсөз",
+    "button": "Кирүү",
+    "noAccount": "Менин аккаунтум жок",
+    "invalidCredentials": "Колдонуучунун аты же сырсөз туура эмес"
+  },
+
+  "createAccount": {
+    "title": "Аккаунт түзүү",
+    "usernamePlaceholder": "Колдонуучунун аты",
+    "passwordPlaceholder": "Сырсөз",
+    "confirmPasswordPlaceholder": "Сырсөздү кайталаңыз",
+    "agePlaceholder": "Жашыңыз канчада",
+    "createButton": "Аккаунт түзүү",
+    "backToLogin": "Кирүү бетине кайтуу",
+    "previewAlt": "Аватардын алдын ала көрүнүшү",
+
+    "alertUsername": "Колдонуучунун атын киргизиңиз",
+    "alertAge": "Сизге кеминде 18 жаш болушу керек",
+    "alertPasswordLength": "Сырсөз кеминде 8 белгиден турушу керек",
+    "alertPasswordMatch": "Сырсөздөр дал келбейт",
+    "alertFile": "PNG файл тандаңыз",
+    "alertPngOnly": "Бир гана PNG файлдарына уруксат берилет",
+    "success": "Аккаунт ийгиликтүү түзүлдү!",
+    "error": "Аккаунт түзүүдө ката кетти"
+  },
+
+  "comments": {
+    "title": "Окуучулардын пикирлери",
+    "placeholder": "Пикир жазыңыз...",
+    "postButton": "Жарыялоо",
+    "noComments": "Азырынча пикир жок. Биринчи болуңуз!",
+    "alertEmpty": "Пикир жазыңыз",
+    "alertNotLoggedIn": "Сиз авторизацияланган жоксуз",
+    "alertError": "Пикир жарыялоодо ката кетти"
+  },
+
+  "profile": {
+    "title": "Колдонуучунун профили",
+    "notLoggedIn": "Колдонуучу авторизацияланган эмес",
+    "backButton": "Артка",
+    "exitButton": "Чыгуу",
+    "avatarAlt": "Колдонуучунун аватары",
+    "ageLabel": "Жашы",
+    "idLabel": "ID"
+  },
+
+  "footer": {
+    "courseTitle": "6 жумада курс",
+    "description": "2025-жылы керек болгон БААРЫН тез жана жөнөкөй үйрөнүңүз",
+    "copyright": "2025 Бардык укуктар корголгон. бирок так эмес :)",
+    "sectionsTitle": "Бөлүмдөр",
+    "home": "Башкы бет",
+    "profile": "Менин профилим",
+    "createAccount": "Аккаунт түзүү",
+    "contacts": "Байланыш",
+    "contactTitle": "Биз менен байланышыңыз",
+    "telegram": "Telegram"
+  }
+}

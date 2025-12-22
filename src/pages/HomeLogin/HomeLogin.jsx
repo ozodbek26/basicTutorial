@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./HomeLogin.module.scss";
+import { useTranslation } from "react-i18next";
 
 export default function HomeLogin() {
+  const { t } = useTranslation();
+  
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +26,7 @@ export default function HomeLogin() {
     );
 
     if (!currentUser) {
-      alert("Неверное имя или пароль");
+      alert(t("login.invalidCredentials"));
       return;
     }
 
@@ -35,13 +38,13 @@ export default function HomeLogin() {
   return (
     <div className={styles.home_login_container}>
       <div className={styles.login_box}>
-        <h1 className={styles.login_title}>Login</h1>
+        <h1 className={styles.login_title}>{t("login.title")}</h1>
 
         <form className={styles.login_form} onSubmit={handleLogin}>
           <input
             className={styles.login_input}
             type="text"
-            placeholder="Username"
+            placeholder={t("login.usernamePlaceholder")}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -49,18 +52,18 @@ export default function HomeLogin() {
           <input
             className={styles.login_input}
             type="password"
-            placeholder="Password"
+            placeholder={t("login.passwordPlaceholder")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
           <button className={styles.login_button} type="submit">
-            Login
+            {t("login.button")}
           </button>
         </form>
 
         <div className={styles.login_link}>
-          <a href="/createAccount">I don't have an account</a>
+          <a href="/createAccount">{t("login.noAccount")}</a>
         </div>
       </div>
     </div>

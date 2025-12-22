@@ -1,0 +1,68 @@
+{
+  "home": {
+    "Comments": "кометы",
+    "link": "домой"
+  },
+
+  "login": {
+    "title": "Вход",
+    "usernamePlaceholder": "Имя пользователя",
+    "passwordPlaceholder": "Пароль",
+    "button": "Войти",
+    "noAccount": "У меня нет аккаунта",
+    "invalidCredentials": "Неверное имя пользователя или пароль"
+  },
+
+  "createAccount": {
+    "title": "Создать аккаунт",
+    "usernamePlaceholder": "Имя пользователя",
+    "passwordPlaceholder": "Пароль",
+    "confirmPasswordPlaceholder": "Подтвердите пароль",
+    "agePlaceholder": "Сколько вам лет",
+    "createButton": "Создать аккаунт",
+    "backToLogin": "Вернуться к входу",
+    "previewAlt": "Превью аватара",
+
+    "alertUsername": "Введите имя пользователя",
+    "alertAge": "Вам должно быть не менее 18 лет",
+    "alertPasswordLength": "Пароль должен содержать минимум 8 символов",
+    "alertPasswordMatch": "Пароли не совпадают",
+    "alertFile": "Выберите PNG-файл",
+    "alertPngOnly": "Разрешены только PNG-файлы",
+    "success": "Аккаунт успешно создан!",
+    "error": "Ошибка при создании аккаунта"
+  },
+
+ "comments": {
+    "title": "Отзывы учеников",
+    "placeholder": "Напишите комментарий...",
+    "postButton": "Опубликовать",
+    "noComments": "Пока нет комментариев. Будьте первым!",
+    "alertEmpty": "Напишите комментарий",
+    "alertNotLoggedIn": "Вы не авторизованы",
+    "alertError": "Ошибка при отправке комментария"
+  },
+
+  "profile": {
+    "title": "Профиль пользователя",
+    "notLoggedIn": "Пользователь не авторизован",
+    "backButton": "Назад",
+    "exitButton": "Выйти",
+    "avatarAlt": "Аватар пользователя",
+    "ageLabel": "Возраст",
+    "idLabel": "ID"
+  },
+
+"footer": {
+    "courseTitle": "Курс за 6 недель",
+    "description": "Быстро и просто научитесь ВСЕМУ, что нужно в 2025 году",
+    "copyright": "2025 Все права защищены. но это не точно :)",
+    "sectionsTitle": "Разделы",
+    "home": "Главная",
+    "profile": "Мой профиль",
+    "createAccount": "Создать аккаунт",
+    "contacts": "Контакты",
+    "contactTitle": "Связаться с нами",
+    "telegram": "Telegram"
+  }
+}

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import styles from "./CreateAccount.module.scss";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function CreateAccount() {
+  const { t } = useTranslation();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -25,12 +28,12 @@ export default function CreateAccount() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!username) return alert("Введите имя пользователя");
-    if (Number(age) < 18) return alert("Вам должно быть не менее 18 лет");
-    if (password.length < 8) return alert("Пароль минимум 8 символов");
-    if (password !== confirmPassword) return alert("Пароли не совпадают");
-    if (!file) return alert("Выберите PNG-файл");
-    if (file.type !== "image/png") return alert("Только PNG!");
+    if (!username) return alert(t("createAccount.alertUsername"));
+    if (Number(age) < 18) return alert(t("createAccount.alertAge"));
+    if (password.length < 8) return alert(t("createAccount.alertPasswordLength"));
+    if (password !== confirmPassword) return alert(t("createAccount.alertPasswordMatch"));
+    if (!file) return alert(t("createAccount.alertFile"));
+    if (file.type !== "image/png") return alert(t("createAccount.alertPngOnly"));
 
     try {
       const base64Image = await fileToBase64(file);
@@ -51,7 +54,7 @@ export default function CreateAccount() {
       const data = await res.json();
       console.log("Аккаунт создан:", data);
 
-      alert("Аккаунт успешно создан!");
+      alert(t("createAccount.success"));
       setAccountCreated(true);
 
       setUsername("");
@@ -62,7 +65,7 @@ export default function CreateAccount() {
       setPreview("");
     } catch (err) {
       console.error(err);
-      alert("Ошибка при создании аккаунта");
+      alert(t("createAccount.error"));
     }
   }
 
@@ -78,32 +81,34 @@ export default function CreateAccount() {
   return (
     <div className={styles.create_account_container}>
       <div className={styles.create_account_box}>
-        <h1 className={styles.create_account_title}>Create Account</h1>
+        <h1 className={styles.create_account_title}>
+          {t("createAccount.title")}
+        </h1>
 
         <form className={styles.create_account_form} onSubmit={handleSubmit}>
           <input
-            placeholder="Username"
+            placeholder={t("createAccount.usernamePlaceholder")}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className={styles.create_account_input}
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder={t("createAccount.passwordPlaceholder")}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className={styles.create_account_input}
           />
           <input
             type="password"
-            placeholder="Confirm Password"
+            placeholder={t("createAccount.confirmPasswordPlaceholder")}
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             className={styles.create_account_input}
           />
           <input
             type="number"
-            placeholder="How old are you"
+            placeholder={t("createAccount.agePlaceholder")}
             value={age}
             onChange={(e) => setAge(e.target.value)}
             className={styles.create_account_input}
@@ -119,7 +124,7 @@ export default function CreateAccount() {
           {preview && (
             <img
               src={preview}
-              alt="Превью аватара"
+              alt={t("createAccount.previewAlt")}
               style={{
                 width: 150,
                 height: 150,
@@ -131,7 +136,7 @@ export default function CreateAccount() {
           )}
 
           <button type="submit" className={styles.create_account_button}>
-            Create Account
+            {t("createAccount.createButton")}
           </button>
 
           <button
@@ -139,7 +144,7 @@ export default function CreateAccount() {
             onClick={() => navigate("/")}
             className={styles.create_account_button}
           >
-            Back to login
+            {t("createAccount.backToLogin")}
           </button>
         </form>
       </div>

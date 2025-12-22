@@ -1,0 +1,69 @@
+{
+  "home": {
+    "Comments": "Comments",
+    "link": "home"
+  },
+
+  "login": {
+    "title": "Login",
+    "usernamePlaceholder": "Username",
+    "passwordPlaceholder": "Password",
+    "button": "Login",
+    "noAccount": "I don't have an account",
+    "invalidCredentials": "Invalid username or password"
+  },
+
+
+  "createAccount": {
+    "title": "Create Account",
+    "usernamePlaceholder": "Username",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "agePlaceholder": "How old are you",
+    "createButton": "Create Account",
+    "backToLogin": "Back to login",
+    "previewAlt": "Avatar preview",
+
+    "alertUsername": "Please enter a username",
+    "alertAge": "You must be at least 18 years old",
+    "alertPasswordLength": "Password must be at least 8 characters",
+    "alertPasswordMatch": "Passwords do not match",
+    "alertFile": "Please select a PNG file",
+    "alertPngOnly": "Only PNG files are allowed",
+    "success": "Account successfully created!",
+    "error": "Error creating account"
+  },
+
+  "comments": {
+    "title": "Student Reviews",
+    "placeholder": "Write a comment...",
+    "postButton": "Post",
+    "noComments": "No comments yet. Be the first!",
+    "alertEmpty": "Please write a comment",
+    "alertNotLoggedIn": "You are not logged in",
+    "alertError": "Error posting comment"
+  },
+
+  "profile": {
+    "title": "User Profile",
+    "notLoggedIn": "User is not logged in",
+    "backButton": "Back",
+    "exitButton": "Logout",
+    "avatarAlt": "User avatar",
+    "ageLabel": "Age",
+    "idLabel": "ID"
+  },
+
+  "footer": {
+    "courseTitle": "Course in 6 weeks",
+    "description": "Learn quickly and easily EVERYTHING you need in 2025",
+    "copyright": "2025 All rights reserved. but not exactly :)",
+    "sectionsTitle": "Sections",
+    "home": "Home",
+    "profile": "My Profile",
+    "createAccount": "Create Account",
+    "contacts": "Contacts",
+    "contactTitle": "Contact Us",
+    "telegram": "Telegram"
+  }
+}

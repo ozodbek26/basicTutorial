@@ -1,55 +1,59 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Footer.module.scss";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.Footer}>
       <div className={styles.container}>
         <div className={styles.column}>
-          <h3 className={styles.logo}>Курс за 6 недели</h3>
-          <p>Быстро и просто научитесь ВСЕМУ , что нужно в 2025 году</p>
-          <p> 2025 Все права защищены. но это не точно{")"}</p>
+          <h3 className={styles.logo}>{t("footer.courseTitle")}</h3>
+          <p>{t("footer.description")}</p>
+          <p>{t("footer.copyright")}</p>
         </div>
 
         <div className={styles.column}>
-          <h4>Разделы</h4>
+          <h4>{t("footer.sectionsTitle")}</h4>
           <ul>
             <li>
-              <Link to="/mainPage">Главная</Link>
+              <Link to="/mainPage">{t("footer.home")}</Link>
             </li>
             <li>
-              <Link to="/UserProfile">Мой профиль</Link>
+              <Link to="/UserProfile">{t("footer.profile")}</Link>
             </li>
             <li>
-              <Link to="/createAccount">Создать аккаунт</Link>
+              <Link to="/createAccount">{t("footer.createAccount")}</Link>
             </li>
             <li>
-              <Link to="/mainPage">Контакты</Link>
+              <Link to="/mainPage">{t("footer.contacts")}</Link>
             </li>
           </ul>
         </div>
+
         <div className={styles.column}>
-          <h4>Связаться с нами</h4>
+          <h4>{t("footer.contactTitle")}</h4>
           <p>Email: ozodbek200017@gmail.com</p>
 
           <div className={styles.social}>
             <a
-              href="https://github.com/ozodbek26"
+              href="https://t.me/ozodbek26"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Telegram
+              {t("footer.telegram")}
             </a>
             <a
               href="https://github.com/ozodbek26"
               target="_blank"
               rel="noopener noreferrer"
             >
-              github
+              GitHub
             </a>
             <a
-              href="https://github.com/ozodbek26"
+              href="https://www.youtube.com/@ozodbek26" 
               target="_blank"
               rel="noopener noreferrer"
             >
