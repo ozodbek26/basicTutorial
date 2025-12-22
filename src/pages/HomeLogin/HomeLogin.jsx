@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./HomeLogin.module.scss";
 import { useTranslation } from "react-i18next";
+import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 
 export default function HomeLogin() {
   const { t } = useTranslation();
-  
+
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -37,6 +38,9 @@ export default function HomeLogin() {
 
   return (
     <div className={styles.home_login_container}>
+      <div className={styles.qwe}>
+        <BurgerMenu />
+      </div>
       <div className={styles.login_box}>
         <h1 className={styles.login_title}>{t("login.title")}</h1>
 
