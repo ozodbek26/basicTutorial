@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import profilePicture from "../../assets/images/profilePicture.png";
 import { useTranslation } from "react-i18next";
-import i18n from "i18next";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 
 export default function Header() {
@@ -20,9 +20,7 @@ export default function Header() {
       </div>
       <div className={styles.qwe} >
         <div>
-          <button onClick={() => i18n.changeLanguage("ru")}>RU</button>
-          <button onClick={() => i18n.changeLanguage("en")}>EN</button>
-          <button onClick={() => i18n.changeLanguage("ky")}>KY</button>
+          <BurgerMenu/>
         </div>
         <div className={styles.header_right} > 
          <Link to="/UserProfile"> 
