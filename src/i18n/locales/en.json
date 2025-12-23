@@ -1,7 +1,8 @@
 {
   "home": {
     "Comments": "Comments",
-    "link": "home"
+    "link": "home",
+    "link2": " Knowledge test"
   },
 
   "login": {
@@ -12,7 +13,6 @@
     "noAccount": "I don't have an account",
     "invalidCredentials": "Invalid username or password"
   },
-
 
   "createAccount": {
     "title": "Create Account",

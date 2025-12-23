@@ -22,7 +22,7 @@ export default function Footer() {
               <Link to="/mainPage">{t("footer.home")}</Link>
             </li>
             <li>
-              <Link to="/UserProfile">{t("footer.profile")}</Link>
+              <Link to="/userProfile">{t("footer.profile")}</Link>
             </li>
             <li>
               <Link to="/createAccount">{t("footer.createAccount")}</Link>

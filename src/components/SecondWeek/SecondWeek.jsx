@@ -9,23 +9,17 @@ export default function SecondWeek() {
       <section className={styles.lesson}>
         <h2>Введение</h2>
         <p>
-          На второй неделе мы изучаем CSS — язык, который отвечает за внешний вид
-          веб-страниц. Если HTML задаёт структуру, то CSS делает сайт красивым и
-          удобным.
+          На второй неделе мы изучаем CSS — язык, который отвечает за внешний
+          вид веб-страниц. Если HTML задаёт структуру, то CSS делает сайт
+          красивым и удобным.
         </p>
-        <p>
-          Без CSS сайты выглядели бы как обычный текст без оформления.
-        </p>
+        <p>Без CSS сайты выглядели бы как обычный текст без оформления.</p>
       </section>
 
       <section className={styles.lesson}>
         <h2>Что такое CSS?</h2>
-        <p>
-          CSS (Cascading Style Sheets) — это каскадные таблицы стилей.
-        </p>
-        <p>
-          CSS позволяет управлять:
-        </p>
+        <p>CSS (Cascading Style Sheets) — это каскадные таблицы стилей.</p>
+        <p>CSS позволяет управлять:</p>
         <ul>
           <li>цветами</li>
           <li>шрифтами</li>
@@ -37,14 +31,10 @@ export default function SecondWeek() {
 
       <section className={styles.lesson}>
         <h2>Как работает CSS</h2>
-        <p>
-          Браузер читает HTML, а затем применяет к элементам CSS-правила.
-        </p>
-        <p>
-          Каждое правило состоит из селектора и набора свойств.
-        </p>
+        <p>Браузер читает HTML, а затем применяет к элементам CSS-правила.</p>
+        <p>Каждое правило состоит из селектора и набора свойств.</p>
         <pre>
-{`p {
+          {`p {
   color: red;
   font-size: 16px;
 }`}
@@ -55,7 +45,7 @@ export default function SecondWeek() {
         <h2>Селекторы</h2>
         <p>Селекторы определяют, к каким элементам применяется стиль.</p>
         <pre>
-{`/* По тегу */
+          {`/* По тегу */
 p {
   color: blue;
 }
@@ -74,11 +64,9 @@ p {
 
       <section className={styles.lesson}>
         <h2>Комбинированные селекторы</h2>
-        <p>
-          CSS позволяет комбинировать селекторы.
-        </p>
+        <p>CSS позволяет комбинировать селекторы.</p>
         <pre>
-{`div p {
+          {`div p {
   color: green;
 }
 
@@ -105,20 +93,30 @@ p {
       <section className={styles.lesson}>
         <h2>Основные CSS-свойства</h2>
         <ul>
-          <li><code>color</code> — цвет текста</li>
-          <li><code>background-color</code> — цвет фона</li>
-          <li><code>font-size</code> — размер текста</li>
-          <li><code>font-family</code> — шрифт</li>
-          <li><code>width</code> — ширина</li>
-          <li><code>height</code> — высота</li>
+          <li>
+            <code>color</code> — цвет текста
+          </li>
+          <li>
+            <code>background-color</code> — цвет фона
+          </li>
+          <li>
+            <code>font-size</code> — размер текста
+          </li>
+          <li>
+            <code>font-family</code> — шрифт
+          </li>
+          <li>
+            <code>width</code> — ширина
+          </li>
+          <li>
+            <code>height</code> — высота
+          </li>
         </ul>
       </section>
 
       <section className={styles.lesson}>
         <h2>Блочная модель (Box Model)</h2>
-        <p>
-          Каждый элемент в CSS представляет собой прямоугольник.
-        </p>
+        <p>Каждый элемент в CSS представляет собой прямоугольник.</p>
         <ul>
           <li>content</li>
           <li>padding</li>
@@ -126,7 +124,7 @@ p {
           <li>margin</li>
         </ul>
         <pre>
-{`div {
+          {`div {
   margin: 10px;
   padding: 20px;
   border: 1px solid black;
@@ -136,23 +134,17 @@ p {
 
       <section className={styles.lesson}>
         <h2>Margin и Padding</h2>
-        <p>
-          Margin отвечает за внешние отступы, padding — за внутренние.
-        </p>
+        <p>Margin отвечает за внешние отступы, padding — за внутренние.</p>
         <pre>
-{`padding: 10px 20px;
+          {`padding: 10px 20px;
 margin: 0 auto;`}
         </pre>
       </section>
 
       <section className={styles.lesson}>
         <h2>Border</h2>
-        <p>
-          Border задаёт рамку элемента.
-        </p>
-        <pre>
-{`border: 2px solid red;`}
-        </pre>
+        <p>Border задаёт рамку элемента.</p>
+        <pre>{`border: 2px solid red;`}</pre>
       </section>
 
       <section className={styles.lesson}>
@@ -163,7 +155,7 @@ margin: 0 auto;`}
           <li>rgb / rgba</li>
         </ul>
         <pre>
-{`color: red;
+          {`color: red;
 color: #ff0000;
 color: rgb(255, 0, 0);`}
         </pre>
@@ -171,11 +163,9 @@ color: rgb(255, 0, 0);`}
 
       <section className={styles.lesson}>
         <h2>Шрифты</h2>
-        <p>
-          CSS позволяет управлять шрифтами.
-        </p>
+        <p>CSS позволяет управлять шрифтами.</p>
         <pre>
-{`font-family: Arial, sans-serif;
+          {`font-family: Arial, sans-serif;
 font-size: 18px;
 font-weight: bold;`}
         </pre>
@@ -183,9 +173,7 @@ font-weight: bold;`}
 
       <section className={styles.lesson}>
         <h2>Display</h2>
-        <p>
-          Свойство display определяет тип отображения элемента.
-        </p>
+        <p>Свойство display определяет тип отображения элемента.</p>
         <ul>
           <li>block</li>
           <li>inline</li>
@@ -196,9 +184,7 @@ font-weight: bold;`}
 
       <section className={styles.lesson}>
         <h2>Position</h2>
-        <p>
-          Position управляет позиционированием элементов.
-        </p>
+        <p>Position управляет позиционированием элементов.</p>
         <ul>
           <li>static</li>
           <li>relative</li>
@@ -209,11 +195,9 @@ font-weight: bold;`}
 
       <section className={styles.lesson}>
         <h2>Flexbox</h2>
-        <p>
-          Flexbox используется для построения гибких макетов.
-        </p>
+        <p>Flexbox используется для построения гибких макетов.</p>
         <pre>
-{`display: flex;
+          {`display: flex;
 justify-content: center;
 align-items: center;`}
         </pre>
@@ -231,9 +215,7 @@ align-items: center;`}
 
       <section className={styles.lesson}>
         <h2>Практическое задание</h2>
-        <p>
-          Возьми HTML-страницу из первой недели и оформи её с помощью CSS.
-        </p>
+        <p>Возьми HTML-страницу из первой недели и оформи её с помощью CSS.</p>
         <ul>
           <li>Измени цвета</li>
           <li>Добавь отступы</li>
@@ -245,11 +227,10 @@ align-items: center;`}
       <section className={styles.lesson}>
         <h2>Итог недели</h2>
         <p>
-          На этой неделе ты освоил основы CSS и понял, как оформлять веб-страницы.
+          На этой неделе ты освоил основы CSS и понял, как оформлять
+          веб-страницы.
         </p>
-        <p>
-          На следующей неделе мы начнём изучать JavaScript.
-        </p>
+        <p>На следующей неделе мы начнём изучать JavaScript.</p>
       </section>
     </div>
   );

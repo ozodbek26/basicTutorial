@@ -15,7 +15,7 @@ export default function Header() {
         <img className={styles.logo} src={logo} alt="Logo" />
         <Link className={styles.header_link} to="/userComments"> {t("home.Comments")}</Link>
         <Link className={styles.header_link} to="/mainPage"> {t("home.link")}</Link>
-        <Link className={styles.header_link} to="/mainPage"> {t("home.link")}</Link>
+        <Link className={styles.header_link} to="/knowledgeTest"> {t("home.link2")}</Link>
         <Link className={styles.header_link} to="/mainPage"> {t("home.link")}</Link>
       </div>
       <div className={styles.qwe} >
@@ -23,7 +23,7 @@ export default function Header() {
           <BurgerMenu/>
         </div>
         <div className={styles.header_right} > 
-         <Link to="/UserProfile"> 
+         <Link to="/userProfile"> 
          <img  src={profilePicture} alt="Profile Picture" />
          </Link>
       </div>
