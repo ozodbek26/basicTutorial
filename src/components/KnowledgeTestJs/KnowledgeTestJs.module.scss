@@ -1,4 +1,22 @@
 .KnowledgeTestJs {
+
+  .submitButton {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+
+    &:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+  }
+
   .tasks {
     display: flex;
     flex-direction: column;
